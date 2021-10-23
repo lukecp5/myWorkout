@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/myWorkoutDB", { useNewUrlParser: true });
 
 
 
@@ -23,3 +23,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { 
 app.listen(PORT, () => {
       console.log(`App running on port ${PORT}!`);
     });
+
+
+module.exports = db;
