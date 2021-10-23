@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
+// + name, type, weight, sets, reps, and duration of exercise
 const workoutSchema = new Schema(
 	{
 		day: {
@@ -17,6 +17,12 @@ const workoutSchema = new Schema(
 				name: {
 					type: String,
 					required: true,
+				},
+				weight: {
+					type: Number
+				},
+				sets: {
+					type: Number
 				},
 			},
 		],
