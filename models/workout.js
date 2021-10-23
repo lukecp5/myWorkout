@@ -2,28 +2,31 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-
 const workoutSchema = new Schema(
-      {
-        day: {
-
-        },
-        exercises: [
-
-        ]
-      },
-      {
-        toJSON: {
-          virtuals: true
-        }
-      }
-    );
-
-
-
-
-
-
+	{
+		day: {
+			type: Date,
+			default: Date.now,
+		},
+		exercises: [
+			{
+				type: {
+					type: String,
+					required: true,
+				},
+				name: {
+					type: String,
+					required: true,
+				},
+			},
+		],
+	},
+	{
+		toJSON: {
+			virtuals: true,
+		},
+	}
+);
 
 const Workout = mongoose.model("Workout", workoutSchema);
 
