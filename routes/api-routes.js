@@ -10,7 +10,16 @@ const workout = {
       type: "Cardio",
       duration: 15,
 }
+
 router.get("/workouts", (req, res) =>{
+      db.Workout.find({})
+      .then(workout => {
+        console.log(workout)
+        res.json(workout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
 })
 
 
