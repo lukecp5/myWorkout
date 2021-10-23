@@ -24,6 +24,12 @@ const workoutSchema = new Schema(
 				sets: {
 					type: Number
 				},
+				reps: {
+					type: Number
+				},
+				duration: {
+					type: Date
+				}
 			},
 		],
 	},
