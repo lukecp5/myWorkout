@@ -22,5 +22,16 @@ router.get("/workouts", (req, res) =>{
       });
 })
 
+router.post("/workouts", ({ body }, res) =>{
+      Workout.create(body)
+      .then(workout => {
+            res.json(workout);
+      })
+      .catch(err => {
+            console.log(err);
+            res.json(err);
+      })
+})
+
 
 module.exports = router
