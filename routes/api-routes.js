@@ -10,6 +10,7 @@ const workout = {
       type: "Cardio",
       duration: 15,
 }
+router.get("/workouts", (req, res) =>{
 })
 
 
