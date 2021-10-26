@@ -33,16 +33,12 @@ router.post("/workouts", async ({body}, res) => {
 		});
 });
 
-router.post("/workouts", ({ body }, res) =>{
-      Workout.create(body)
-      .then(workout => {
-            res.json(workout);
-      })
-      .catch(err => {
-            console.log(err);
-            res.json(err);
-      })
-})
+router.put("/workouts/:id", (req, res) => {
+	console.log(req.params.id);
+	console.log(req.body);
+	const id = req.params.id;
+	const body = req.body;
+});
 
 module.exports = router;
 
