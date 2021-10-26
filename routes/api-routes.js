@@ -37,13 +37,16 @@ router.put("/workouts/:id", (req, res) => {
 	console.log(req.body);
 	const id = req.params.id;
 	const body = req.body;
-	db.Workout.updateOne(
-		{_id: id},
-		{
-			$push: {
-				exercises: {...body},
-			},
-		}
+
+	db.Workout.findOneAndUpdate({_id: id}, {$push: {exercises: body}})
+		.then((data) => {
+			console.log(data);
+			res.json(data);
+		})
+		.catch((err) => {
+			res.status(400).json(err);
+		});
+});
 	)
 		.then((workout) => {
 			console.log(workout);
