@@ -33,8 +33,6 @@ router.post("/workouts", (req, res) => {
     });
     
 router.put("/workouts/:id", (req, res) => {
-	console.log(req.params.id);
-	console.log(req.body);
 	const id = req.params.id;
 	const body = req.body;
 
@@ -47,6 +45,7 @@ router.put("/workouts/:id", (req, res) => {
 			res.status(400).json(err);
 		});
 });
+
 router.put("/workouts/:id", (req, res) => {
 	const id = req.params.id;
 	const body = req.body;
@@ -64,5 +63,15 @@ router.put("/workouts/:id", (req, res) => {
 	  });
     });
 
+router.get("/workouts/range", (req, res) => {
+	db.Workout.find({})
+	.sort({ date: -1 })
+	  .then((data) => {
+	    res.json(data);
+	  })
+	  .catch((err) => {
+	    res.status(400).json(err);
+	  });
+    });
 
 module.exports = router;
