@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const path = require("path");
-const app = require(".");
 const mongoose = require("mongoose");
 const mongojs = require("mongojs");
 
@@ -56,5 +55,3 @@ router.put("/workouts/:id", (req, res) => {
 });
 
 module.exports = router;
-
-module.exports = router
