@@ -38,6 +38,21 @@ router.put("/workouts/:id", (req, res) => {
 	console.log(req.body);
 	const id = req.params.id;
 	const body = req.body;
+	db.Workout.updateOne(
+		{_id: id},
+		{
+			$push: {
+				exercises: {...body},
+			},
+		}
+	)
+		.then((workout) => {
+			console.log(workout);
+			res.status(200).json(workout);
+		})
+		.catch((err) => {
+			res.status(400).json(err);
+		});
 });
 
 module.exports = router;
