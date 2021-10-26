@@ -47,14 +47,22 @@ router.put("/workouts/:id", (req, res) => {
 			res.status(400).json(err);
 		});
 });
+router.put("/workouts/:id", (req, res) => {
+	const id = req.params.id;
+	const body = req.body;
+    
+	db.Workout.findOneAndUpdate(
+	  { _id: id },
+	  { $push: { exercises: body } },
+	  { new: true, runValidators: true }
 	)
-		.then((workout) => {
-			console.log(workout);
-			res.status(200).json(workout);
-		})
-		.catch((err) => {
-			res.status(400).json(err);
-		});
-});
+	  .then((data) => {
+	    res.json(data);
+	  })
+	  .catch((err) => {
+	    res.status(400).json(err);
+	  });
+    });
+
 
 module.exports = router;
