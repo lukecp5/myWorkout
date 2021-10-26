@@ -44,5 +44,6 @@ router.post("/workouts", ({ body }, res) =>{
       })
 })
 
+module.exports = router;
 
 module.exports = router
