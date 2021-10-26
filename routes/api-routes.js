@@ -22,16 +22,16 @@ router.get("/workouts", (req, res) => {
 		});
 });
 
-router.post("/workouts", async ({body}, res) => {
-	db.Workout.create(body)
-		.then((dbWorkout) => {
-			res.json(dbWorkout);
-		})
-		.catch((err) => {
-			res.status(400).json(err);
-		});
-});
-
+router.post("/workouts", (req, res) => {
+	db.Workout.create({})
+	  .then((newWorkout) => {
+	    res.json(newWorkout);
+	  })
+	  .catch((err) => {
+	    res.status(400).json(err);
+	  });
+    });
+    
 router.put("/workouts/:id", (req, res) => {
 	console.log(req.params.id);
 	console.log(req.body);
