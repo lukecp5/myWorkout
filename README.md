@@ -3,7 +3,7 @@ My Workout is a full-stack application that enables users to enter details about
 
 Information about the user's current workout is displayed on the main page of the application using aggrogate functions offered by MongoDB. After the user has entered multiple workouts worth of data, they can navigate to the _Dashboard_ page. On the dashboard page the duration and resistance weight data is retrieved from the database and graphed into two graphs. This allows the user to see how their workout duration and intensity changes over time. A consumer will reach their fitness goals more quickly when they track their workout progress, which is the whole idea behind this application. 
 
-![SCREENSHOT OF APPLICATION GOES HERE]()
+![https://github.com/lukecp5/myWorkout/blob/main/public/screenshot-mainpage.png?raw=true](https://my-workouts-tracked.herokuapp.com/)
 
 ---
 
