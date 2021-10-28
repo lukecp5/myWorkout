@@ -51,6 +51,8 @@ router.put("/workouts/:id", (req, res) => {
 		});
 });
 
+    
+// + When a user enters information about a new exercise, push a new exercise object into the current workout document and return the updated workout document as JSON
 router.put("/workouts/:id", (req, res) => {
 	const id = req.params.id;
 	const body = req.body;
